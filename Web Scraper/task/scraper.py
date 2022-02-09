@@ -34,5 +34,11 @@ import json
 
 url = input('Input the URL:\n')
 r = requests.get(url)
-t = json.loads(r.text)['content']
-print(t)
+if r:
+    t = json.loads(r.text)['content']
+    if len(t):
+        print(t)
+    else:
+        print('Invalid quote resource!')
+else:
+    print('Invalid quote resource!')
