@@ -29,4 +29,10 @@ Input the URL:
 
 Invalid quote resource!
 """
+import requests
+import json
 
+url = input('Input the URL:\n')
+r = requests.get(url)
+t = json.loads(r.text)['content']
+print(t)
